@@ -42,28 +42,11 @@ export default defineConfig({
 				alt: "Docsforall Logo",
 				// replacesTitle: true,
 			},
-			customCss: process.env.NO_GRADIENTS ? [] : ['./src/styles/landing.css'],
+			customCss: process.env.NO_GRADIENTS ? [] : ["./src/styles/landing.css"],
 			components: {
 				SiteTitle: "./src/components/starlight/SiteTitle.astro",
 			},
-			sidebar: [
-				{
-					label: "Guides",
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{
-							label: "Example Guide",
-							slug: "guides/example",
-						},
-					],
-				},
-				{
-					label: "Reference",
-					autogenerate: {
-						directory: "reference",
-					},
-				},
-			],
+			sidebar: [],
 		}),
 	],
 	output: "server",
