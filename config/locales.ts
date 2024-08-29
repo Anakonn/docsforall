@@ -9,7 +9,7 @@ export function makeLocalesConfig(): StarlightLocalesConfig {
 		Object.entries(languages).map(([locale, label]) => [
 			locale,
 			{ label, lang: normalizeLangTag(locale), dir: rtlLanguages.has(locale) ? 'rtl' : 'ltr' },
-		])
+		]),
 	);
 }
 

@@ -1,7 +1,6 @@
-import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import { defineConfig } from "astro/config";
 import { makeLocalesConfig } from "./config/locales";
-import node from "@astrojs/node";
 import { siteConfig } from "./config/site";
 
 // https://astro.build/config
@@ -45,12 +44,9 @@ export default defineConfig({
 			customCss: process.env.NO_GRADIENTS ? [] : ["./src/styles/landing.css"],
 			components: {
 				SiteTitle: "./src/components/starlight/SiteTitle.astro",
+				Header: "./src/components/starlight/Header.astro",
 			},
 			sidebar: [],
 		}),
 	],
-	output: "server",
-	adapter: node({
-		mode: "standalone",
-	}),
 });
