@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://docsforall.com/sitemap-index-0.xml
+Sitemap: https://docsforall.com/sitemap-index.xml
