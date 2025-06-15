@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "docsforall",
+  "compatibility_date": "2025-06-15",
+  "assets": {
+    "directory": "./dist"
+  }
+}
