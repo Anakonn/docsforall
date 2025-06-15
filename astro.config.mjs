@@ -24,7 +24,10 @@ export default defineConfig({
         },
         {
           label: 'Astro Starlight',
-          autogenerate: { directory: 'astro-starlight' },
+          items: [
+            { label: '시작하기', slug: 'astro-starlight/getting-started' },
+            { label: 'Cloudflare 배포', slug: 'astro-starlight/deploy-cloudflare' },
+          ],
         },
       ],
     }),
