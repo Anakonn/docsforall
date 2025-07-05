@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import cloudflare from '@astrojs/cloudflare';
 import sitemap from '@astrojs/sitemap';
+import { Sidebar } from './config/sidebar.js';
 
 const site = 'https://docsforall.com';
 
@@ -51,26 +52,7 @@ export default defineConfig({
         alt: 'Docs for All Logo',
         replacesTitle: true,
       },
-      sidebar: [
-        {
-          label: 'Guides',
-          items: [
-            // Each item here is one entry in the navigation menu.
-            { label: 'Example Guide', slug: 'guides/example' },
-          ],
-        },
-        {
-          label: 'Reference',
-          autogenerate: { directory: 'reference' },
-        },
-        {
-          label: 'Astro Starlight',
-          items: [
-            { label: '시작하기', slug: 'astro-starlight/getting-started' },
-            { label: 'Cloudflare 배포', slug: 'astro-starlight/deploy-cloudflare' },
-          ],
-        },
-      ],
+      sidebar: Sidebar,
     }),
     sitemap(),
   ],
