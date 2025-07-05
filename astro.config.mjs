@@ -19,6 +19,13 @@ export default defineConfig({
         },
       },
       head: [
+        {
+          tag: 'link',
+          attrs: {
+            rel: 'sitemap',
+            href: '/sitemap-index.xml',
+          },
+        },
         // Add ICO favicon fallback for Safari.
         {
           tag: 'link',
