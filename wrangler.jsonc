@@ -4,5 +4,8 @@
   "compatibility_date": "2025-06-15",
   "assets": {
     "directory": "./dist"
+  },
+  "build": {
+    "command": "bun install --frozen-lockfile && bun run build"
   }
 }
