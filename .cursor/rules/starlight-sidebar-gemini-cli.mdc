@@ -1,0 +1,73 @@
+---
+alwaysApply: false
+---
+# Starlight Sidebar - 폴더별 Sidebar 작성 범용 가이드
+
+이 규칙은 문서 상위 폴더(예: src/content/docs/하위 폴더)에 대해 sidebar 파일을 작성할 때 참고합니다.
+
+- **sidebar/폴더명.ts** 파일을 생성하여 해당 문서 그룹만의 sidebar 배열을 export하세요.
+- label은 한국어로 작성, slug는 src/content/docs/ 이하의 경로에서 .md, .mdx 확장자를 제거한 형태로 작성합니다.
+- index.md는 폴더명만 slug로 사용 (예: /my-feature/index.md → 'my-feature')
+- 실제 파일 구조와 index.md의 목차 순서를 반영해 그룹화(예: CLI, 핵심, 도구 등)할 수 있습니다.
+- badge, collapsed 등 sidebar 옵션은 필요에 따라 자유롭게 추가할 수 있습니다.
+- sidebar 파일 예시:
+
+```ts
+import type { StarlightUserConfig } from '@astrojs/starlight/types';
+
+export const myFeatureSidebar = [
+  {
+    label: 'My Feature',
+    items: [
+      { label: '개요', slug: 'my-feature' },
+      { label: '가이드', slug: 'my-feature/guide' },
+      {
+        label: '고급',
+        items: [
+          { label: '설정', slug: 'my-feature/advanced/config' },
+          { label: '확장', slug: 'my-feature/advanced/extension' },
+        ],
+      },
+    ],
+  },
+] satisfies StarlightUserConfig['sidebar'];
+```
+
+- sidebar/index.ts에서 각 폴더별 sidebar를 import하여 하나의 sidebar로 합쳐 export합니다.
+- 새로운 문서 그룹이 추가될 경우, sidebar/폴더명.ts 파일을 추가하고 index.ts에 import/합치기만 하면 됩니다.
+- 중복/누락 없이 실제 파일 구조와 목차 순서를 반드시 반영하세요.
+# Starlight Sidebar - 폴더별 Sidebar 작성 범용 가이드
+
+이 규칙은 문서 상위 폴더(예: src/content/docs/하위 폴더)에 대해 sidebar 파일을 작성할 때 참고합니다.
+
+- **sidebar/폴더명.ts** 파일을 생성하여 해당 문서 그룹만의 sidebar 배열을 export하세요.
+- label은 한국어로 작성, slug는 src/content/docs/ 이하의 경로에서 .md, .mdx 확장자를 제거한 형태로 작성합니다.
+- index.md는 폴더명만 slug로 사용 (예: /my-feature/index.md → 'my-feature')
+- 실제 파일 구조와 index.md의 목차 순서를 반영해 그룹화(예: CLI, 핵심, 도구 등)할 수 있습니다.
+- badge, collapsed 등 sidebar 옵션은 필요에 따라 자유롭게 추가할 수 있습니다.
+- sidebar 파일 예시:
+
+```ts
+import type { StarlightUserConfig } from '@astrojs/starlight/types';
+
+export const myFeatureSidebar = [
+  {
+    label: 'My Feature',
+    items: [
+      { label: '개요', slug: 'my-feature' },
+      { label: '가이드', slug: 'my-feature/guide' },
+      {
+        label: '고급',
+        items: [
+          { label: '설정', slug: 'my-feature/advanced/config' },
+          { label: '확장', slug: 'my-feature/advanced/extension' },
+        ],
+      },
+    ],
+  },
+] satisfies StarlightUserConfig['sidebar'];
+```
+
+- sidebar/index.ts에서 각 폴더별 sidebar를 import하여 하나의 sidebar로 합쳐 export합니다.
+- 새로운 문서 그룹이 추가될 경우, sidebar/폴더명.ts 파일을 추가하고 index.ts에 import/합치기만 하면 됩니다.
+- 중복/누락 없이 실제 파일 구조와 목차 순서를 반드시 반영하세요.

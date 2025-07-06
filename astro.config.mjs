@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import cloudflare from '@astrojs/cloudflare';
 import sitemap from '@astrojs/sitemap';
-import { Sidebar } from './config/sidebar.js';
+import { sidebar } from './sidebar';
 
 const site = 'https://docsforall.com';
 
@@ -52,7 +52,7 @@ export default defineConfig({
         alt: 'Docs for All Logo',
         replacesTitle: true,
       },
-      sidebar: Sidebar,
+      sidebar,
     }),
     sitemap(),
   ],
